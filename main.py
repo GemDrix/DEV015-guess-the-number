@@ -19,7 +19,7 @@ while jugadora_adivinando:
                
         if intento_jugadora == random_number:
             print("¡Felicidades! Has adivinado el número.")
-            break  
+            break  #termina turno de la jugadora.
         elif intento_jugadora < random_number:
             print("El número secreto es mayor.")
         else:
@@ -27,13 +27,13 @@ while jugadora_adivinando:
         
     
     else:
-        # Turno del ordenador
+        #se le dan parametros para que tome en cuenta las decisiones de la jugadora y pueda desde allí generar el numero
         if intento_jugadora < random_number:
             intento_computador = random.randint(intento_jugadora + 1, 100)
             
         else:
             intento_computador = random.randint(1, intento_jugadora - 1)
-        
+        # Turno del computador
         print(f"El ordenador adivina: {intento_computador}")
         
         if intento_computador == random_number:
