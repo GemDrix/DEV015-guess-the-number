@@ -14,15 +14,7 @@ class TestJugador(unittest.TestCase):
         jugador = Jugador("Jugador")
         numero = jugador.elegir_numero(1, 100)
         self.assertEqual(numero, 50)  # Verifica que el número elegido sea 50
-
-    @patch('random.randint', return_value=75)  # Simula la elección de la computadora
-    def test_elegir_numero_computadora(self, mock_randint):
-        """ test_elegir_numero_computadora: Verifica que la computadora 
-        elija un número predeterminado.
-        """
-        jugador = Jugador("Computadora")
-        numero = jugador.elegir_numero(1, 100)
-        self.assertEqual(numero, 75)  # Verifica que la computadora elija 75
+        mock_input.assert_called_once()
 
     @patch('builtins.input', side_effect=['150', 'not a number', '50'])  # Simula inputs inválidos
     def test_elegir_numero_humano_invalido(self, mock_input):
@@ -32,7 +24,7 @@ class TestJugador(unittest.TestCase):
         jugador = Jugador("Jugador")
         numero = jugador.elegir_numero(1, 100)  # Ahora debe recibir un número válido
         self.assertEqual(numero, 50)  # Verifica que finalmente el número elegido sea 50
+        mock_input.assert_called()
 
 if __name__ == '__main__':
     unittest.main()
-

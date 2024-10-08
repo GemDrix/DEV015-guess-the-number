@@ -24,6 +24,11 @@ class Jugador:
         self.historial = []
 
     def elegir_numero(self, min_n, max_n):
+        """Permite al jugador (humano o computadora) elegir un número dentro de un rango dado.
+
+    Esta función genera un número aleatorio si el jugador es la computadora, 
+    o solicita al jugador humano que ingrese un número. 
+    """
         if self.nombre == "Computadora":
             numero = random.randint(min_n, max_n)
             print(f"{self.nombre} ha elegido el número {numero}")
@@ -42,4 +47,9 @@ class Jugador:
                     print("Entrada no válida. Por favor, ingresa un número entero.")
 
     def registrar_eleccion(self, turno, eleccion):
+        """Registra la elección de un jugador en su historial.
+
+    Esta función añade un registro a la lista de historial del jugador, 
+    incluyendo el turno actual y la elección hecha.
+    """
         self.historial.append({"turno": turno, "elegido": eleccion})

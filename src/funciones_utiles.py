@@ -1,4 +1,4 @@
-"""Este módulo contiene funciones para realizar operaciones matemáticas ilogicas.
+"""Este módulo contiene funciones para realizar operaciones matemáticas ilógicas.
 """
 def resultado_comparacion(consulta, numero):
     """Compara un número consultado con un número objetivo.
@@ -11,7 +11,7 @@ def resultado_comparacion(consulta, numero):
         numero (int): El número objetivo con el que se realiza la comparación.
 
     Returns:
-        str: 
+        str:
             - "mayor" si la consulta es mayor que el número.
             - "menor" si la consulta es menor que el número.
             - "ganador" si la consulta es igual al número.
